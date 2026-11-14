@@ -1,0 +1,1672 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#fff3f4">
+  <meta name="description" content="For The Love Of Cupcakes — family-run cupcake and dessert shop in Escanaba, Michigan. A NEW cupcake menu every day, custom orders, celebrations and sweet surprises!">
+  <title>For The Love Of Cupcakes | Escanaba, Michigan</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Fredoka:wght@400;500;600;700&family=Pacifico&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --pink: #f6a8bb;
+      --pink-dark: #df7794;
+      --pink-light: #fff0f3;
+      --mint: #a8d9c7;
+      --mint-dark: #5caa8b;
+      --mint-light: #effaf5;
+      --cream: #fffaf0;
+      --yellow: #ffe4a3;
+      --brown: #55443f;
+      --muted: #877773;
+      --white: #ffffff;
+      --shadow: 0 12px 35px rgba(125, 79, 85, .09);
+      --radius: 24px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 85px;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      color: var(--brown);
+      background: var(--cream);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, .brand {
+      font-family: 'Fredoka', sans-serif;
+      line-height: 1.15;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button, input, select, textarea {
+      font: inherit;
+    }
+
+    button, a {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    .container {
+      width: min(1120px, 90%);
+      margin: auto;
+    }
+
+    .script {
+      font-family: 'Pacifico', cursive;
+      color: var(--pink-dark);
+      font-weight: 400;
+    }
+
+    .section-label {
+      display: inline-block;
+      background: var(--pink-light);
+      color: var(--pink-dark);
+      padding: 7px 17px;
+      border-radius: 50px;
+      font-size: .8rem;
+      font-weight: 800;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 15px;
+    }
+
+    .section-heading {
+      font-size: clamp(2.2rem, 5vw, 3.5rem);
+      margin-bottom: 15px;
+      color: var(--brown);
+    }
+
+    .section-intro {
+      max-width: 610px;
+      margin: 0 auto 40px;
+      color: var(--muted);
+      font-size: 1.02rem;
+    }
+
+    .text-center {
+      text-align: center;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      border: none;
+      cursor: pointer;
+      border-radius: 50px;
+      padding: 13px 25px;
+      font-weight: 800;
+      transition: .25s ease;
+      font-size: .95rem;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(90, 60, 60, .12);
+    }
+
+    .btn-pink {
+      background: var(--pink);
+      color: #fff;
+    }
+
+    .btn-mint {
+      background: var(--mint);
+      color: #315e4c;
+    }
+
+    .btn-dark {
+      background: var(--brown);
+      color: white;
+    }
+
+    .btn-outline {
+      border: 2px solid var(--pink);
+      color: var(--pink-dark);
+      background: transparent;
+    }
+
+    /* HEADER */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255, 250, 240, .96);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(230, 190, 190, .3);
+    }
+
+    .navbar {
+      min-height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      font-size: 1.45rem;
+      font-weight: 700;
+      color: var(--pink-dark);
+      display: flex;
+      align-items: center;
+      gap: 9px;
+    }
+
+    .brand-icon {
+      font-size: 1.8rem;
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 25px;
+      align-items: center;
+      font-size: .9rem;
+      font-weight: 700;
+    }
+
+    .nav-links a:hover {
+      color: var(--pink-dark);
+    }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: 0;
+      font-size: 1.8rem;
+      cursor: pointer;
+      color: var(--brown);
+    }
+
+    /* HERO */
+
+    .hero {
+      position: relative;
+      padding: 85px 0 100px;
+      background:
+        radial-gradient(circle at 5% 20%, rgba(246,168,187,.2), transparent 25%),
+        radial-gradient(circle at 95% 80%, rgba(168,217,199,.35), transparent 28%),
+        var(--pink-light);
+      overflow: hidden;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      align-items: center;
+      gap: 50px;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-tag {
+      display: inline-block;
+      color: var(--mint-dark);
+      background: white;
+      padding: 8px 17px;
+      border-radius: 50px;
+      font-size: .82rem;
+      font-weight: 800;
+      margin-bottom: 22px;
+    }
+
+    .hero h1 {
+      font-size: clamp(3rem, 6.5vw, 5.2rem);
+      color: var(--brown);
+      letter-spacing: -2px;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 span {
+      color: var(--pink-dark);
+    }
+
+    .hero-description {
+      font-size: 1.12rem;
+      max-width: 510px;
+      color: var(--muted);
+      margin-bottom: 28px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .hero-rating {
+      margin-top: 28px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: .9rem;
+      font-weight: 700;
+    }
+
+    .stars {
+      color: #e8ae39;
+      letter-spacing: 2px;
+      font-size: 1.1rem;
+    }
+
+    .hero-image {
+      position: relative;
+    }
+
+    .hero-image img {
+      width: 100%;
+      height: 490px;
+      object-fit: cover;
+      border-radius: 48% 48% 28px 28px;
+      box-shadow: var(--shadow);
+      border: 9px solid white;
+    }
+
+    .floating-note {
+      position: absolute;
+      bottom: 25px;
+      left: -25px;
+      background: white;
+      border-radius: 20px;
+      padding: 17px 23px;
+      box-shadow: var(--shadow);
+      font-family: 'Fredoka', sans-serif;
+      transform: rotate(-5deg);
+    }
+
+    .floating-note strong {
+      color: var(--pink-dark);
+      font-size: 1.35rem;
+      display: block;
+    }
+
+    .floating-note span {
+      font-size: .8rem;
+      color: var(--muted);
+    }
+
+    .hero-sparkle {
+      position: absolute;
+      font-size: 2rem;
+      opacity: .7;
+    }
+
+    .sparkle-one {
+      top: 50px;
+      right: 8%;
+    }
+
+    .sparkle-two {
+      bottom: 40px;
+      left: 5%;
+    }
+
+    /* DAILY FLAVOURS */
+
+    .flavours {
+      padding: 95px 0;
+      background: white;
+    }
+
+    .flavour-banner {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      background: var(--mint-light);
+      border: 2px dashed var(--mint);
+      padding: 18px;
+      border-radius: 18px;
+      margin-bottom: 35px;
+      font-weight: 800;
+      color: #477d68;
+    }
+
+    .flavour-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .flavour-card {
+      background: var(--cream);
+      border-radius: var(--radius);
+      overflow: hidden;
+      transition: .3s;
+      border: 1px solid #f4eae4;
+    }
+
+    .flavour-card:hover {
+      transform: translateY(-7px);
+      box-shadow: var(--shadow);
+    }
+
+    .flavour-card img {
+      width: 100%;
+      height: 185px;
+      object-fit: cover;
+    }
+
+    .flavour-info {
+      padding: 18px;
+    }
+
+    .flavour-info h3 {
+      font-size: 1.3rem;
+      margin-bottom: 6px;
+    }
+
+    .flavour-info p {
+      color: var(--muted);
+      font-size: .88rem;
+    }
+
+    .flavour-tag {
+      display: inline-block;
+      margin-top: 12px;
+      padding: 5px 11px;
+      border-radius: 30px;
+      background: var(--pink-light);
+      color: var(--pink-dark);
+      font-size: .7rem;
+      font-weight: 800;
+    }
+
+    .flavour-card:nth-child(even) .flavour-tag {
+      background: var(--mint-light);
+      color: var(--mint-dark);
+    }
+
+    .menu-note {
+      margin-top: 30px;
+      padding: 17px;
+      text-align: center;
+      color: var(--muted);
+      font-size: .9rem;
+      background: var(--pink-light);
+      border-radius: 16px;
+    }
+
+    /* CUSTOM ORDERS */
+
+    .custom-orders {
+      padding: 100px 0;
+      background: var(--mint-light);
+    }
+
+    .custom-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 55px;
+      align-items: center;
+    }
+
+    .custom-image {
+      position: relative;
+    }
+
+    .custom-image img {
+      width: 100%;
+      height: 490px;
+      object-fit: cover;
+      border-radius: 30px;
+      box-shadow: var(--shadow);
+    }
+
+    .custom-image-note {
+      position: absolute;
+      right: -15px;
+      bottom: 25px;
+      padding: 15px 22px;
+      border-radius: 18px;
+      background: var(--pink);
+      color: white;
+      font-family: 'Fredoka', sans-serif;
+      font-size: 1.15rem;
+      transform: rotate(4deg);
+    }
+
+    .custom-copy h2 {
+      font-size: clamp(2.3rem, 4vw, 3.3rem);
+      margin-bottom: 17px;
+    }
+
+    .custom-copy > p {
+      color: var(--muted);
+      margin-bottom: 20px;
+    }
+
+    .occasion-list {
+      list-style: none;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin: 25px 0;
+    }
+
+    .occasion-list li {
+      background: white;
+      border-radius: 13px;
+      padding: 12px;
+      font-weight: 700;
+      font-size: .88rem;
+    }
+
+    .occasion-list span {
+      margin-right: 7px;
+    }
+
+    .order-form {
+      background: white;
+      padding: 28px;
+      border-radius: 25px;
+      box-shadow: var(--shadow);
+      margin-top: 25px;
+    }
+
+    .order-form h3 {
+      font-size: 1.65rem;
+      margin-bottom: 7px;
+    }
+
+    .form-subtitle {
+      color: var(--muted);
+      font-size: .86rem;
+      margin-bottom: 20px;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: .84rem;
+      font-weight: 800;
+      margin-bottom: 6px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1.5px solid #eee4df;
+      border-radius: 12px;
+      background: #fffcfa;
+      color: var(--brown);
+      outline: none;
+      transition: .2s;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--pink);
+      box-shadow: 0 0 0 3px rgba(246,168,187,.15);
+    }
+
+    .form-group textarea {
+      min-height: 110px;
+      resize: vertical;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 13px;
+    }
+
+    .form-submit {
+      width: 100%;
+      margin-top: 7px;
+    }
+
+    .privacy-note {
+      font-size: .75rem;
+      color: var(--muted);
+      margin-top: 12px;
+      text-align: center;
+    }
+
+    /* EVENTS */
+
+    .events {
+      padding: 100px 0;
+      background: var(--cream);
+    }
+
+    .events-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 25px;
+      margin-top: 40px;
+    }
+
+    .event-card {
+      background: white;
+      border-radius: 25px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+
+    .event-card img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+    }
+
+    .event-content {
+      padding: 28px;
+    }
+
+    .event-label {
+      color: var(--pink-dark);
+      font-weight: 800;
+      font-size: .77rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .event-content h3 {
+      font-size: 1.65rem;
+      margin: 8px 0 12px;
+    }
+
+    .event-content p {
+      color: var(--muted);
+      font-size: .93rem;
+    }
+
+    .event-card:last-child .event-label {
+      color: var(--mint-dark);
+    }
+
+    .event-card:last-child .event-content h3 {
+      color: #477d68;
+    }
+
+    .community-strip {
+      margin-top: 35px;
+      background: var(--pink-light);
+      border-radius: 20px;
+      padding: 25px;
+      text-align: center;
+    }
+
+    .community-strip h3 {
+      font-size: 1.5rem;
+      margin-bottom: 8px;
+    }
+
+    .community-strip p {
+      color: var(--muted);
+      max-width: 650px;
+      margin: auto;
+    }
+
+    /* ABOUT */
+
+    .about {
+      padding: 100px 0;
+      background: white;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .about-image img {
+      width: 100%;
+      height: 450px;
+      object-fit: cover;
+      border-radius: 30px;
+      box-shadow: var(--shadow);
+    }
+
+    .about-copy h2 {
+      font-size: clamp(2.3rem, 4vw, 3.4rem);
+      margin-bottom: 20px;
+    }
+
+    .about-copy p {
+      color: var(--muted);
+      margin-bottom: 17px;
+    }
+
+    .family-values {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 13px;
+      margin-top: 25px;
+    }
+
+    .value-item {
+      background: var(--cream);
+      padding: 15px;
+      border-radius: 15px;
+      font-weight: 800;
+      font-size: .88rem;
+    }
+
+    .value-item span {
+      display: block;
+      font-size: 1.5rem;
+      margin-bottom: 5px;
+    }
+
+    /* CONTACT */
+
+    .contact {
+      padding: 100px 0;
+      background:
+        radial-gradient(circle at 90% 10%, rgba(246,168,187,.2), transparent 30%),
+        var(--mint-light);
+    }
+
+    .contact-box {
+      max-width: 850px;
+      margin: auto;
+      background: white;
+      padding: 55px 35px;
+      text-align: center;
+      border-radius: 35px;
+      box-shadow: var(--shadow);
+    }
+
+    .contact-box h2 {
+      font-size: clamp(2.2rem, 5vw, 3.5rem);
+      margin-bottom: 15px;
+    }
+
+    .contact-box > p {
+      color: var(--muted);
+      max-width: 570px;
+      margin: 0 auto 30px;
+    }
+
+    .contact-details {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-bottom: 30px;
+    }
+
+    .contact-detail {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--cream);
+      padding: 15px 20px;
+      border-radius: 15px;
+      font-weight: 800;
+      font-size: .9rem;
+    }
+
+    .contact-detail span {
+      font-size: 1.35rem;
+    }
+
+    .contact-buttons {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .opening-note {
+      margin-top: 22px;
+      color: var(--muted);
+      font-size: .8rem;
+    }
+
+    /* FOOTER */
+
+    footer {
+      padding: 55px 0 25px;
+      background: var(--brown);
+      color: white;
+    }
+
+    .footer-main {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+      flex-wrap: wrap;
+      padding-bottom: 35px;
+    }
+
+    .footer-brand {
+      font-family: 'Fredoka', sans-serif;
+      font-size: 1.8rem;
+      color: var(--pink);
+      margin-bottom: 10px;
+    }
+
+    .footer-description {
+      color: #e2d5d0;
+      max-width: 350px;
+      font-size: .9rem;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      font-size: .9rem;
+      font-weight: 700;
+    }
+
+    .footer-links a:hover {
+      color: var(--pink);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,.15);
+      padding-top: 22px;
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      flex-wrap: wrap;
+      font-size: .8rem;
+      color: #d9c9c4;
+    }
+
+    .footer-heart {
+      color: var(--pink);
+    }
+
+    /* PHOTO DISCLAIMER */
+
+    .photo-disclaimer {
+      font-size: .73rem;
+      color: #9a8982;
+      text-align: center;
+      margin-top: 14px;
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width: 950px) {
+      .nav-links {
+        gap: 13px;
+        font-size: .82rem;
+      }
+
+      .flavour-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .hero-grid {
+        gap: 30px;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .navbar {
+        min-height: 70px;
+      }
+
+      .brand {
+        font-size: 1.18rem;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-right .btn {
+        padding: 10px 17px;
+        font-size: .85rem;
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background: var(--cream);
+        flex-direction: column;
+        padding: 25px;
+        box-shadow: var(--shadow);
+        gap: 20px;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .hero {
+        padding: 60px 0 75px;
+      }
+
+      .hero-grid,
+      .custom-grid,
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-content {
+        text-align: center;
+      }
+
+      .hero-description {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .hero-buttons,
+      .hero-rating {
+        justify-content: center;
+      }
+
+      .hero-image img {
+        height: 360px;
+        border-radius: 35px;
+      }
+
+      .floating-note {
+        left: 10px;
+      }
+
+      .custom-image img,
+      .about-image img {
+        height: 350px;
+      }
+
+      .custom-image-note {
+        right: 10px;
+      }
+
+      .events-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .about-grid {
+        gap: 35px;
+      }
+
+      .contact-box {
+        padding: 40px 20px;
+      }
+
+      .footer-main {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        width: 91%;
+      }
+
+      .brand {
+        font-size: 1rem;
+        gap: 5px;
+      }
+
+      .brand-icon {
+        font-size: 1.45rem;
+      }
+
+      .nav-right {
+        gap: 7px;
+      }
+
+      .nav-right .btn {
+        padding: 9px 13px;
+        font-size: .78rem;
+      }
+
+      .hero h1 {
+        font-size: 3.2rem;
+      }
+
+      .hero-image img {
+        height: 290px;
+      }
+
+      .flavour-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+      }
+
+      .flavour-card img {
+        height: 135px;
+      }
+
+      .flavour-info {
+        padding: 13px;
+      }
+
+      .flavour-info h3 {
+        font-size: 1.1rem;
+      }
+
+      .flavour-info p {
+        font-size: .8rem;
+      }
+
+      .occasion-list,
+      .family-values,
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+
+      .order-form {
+        padding: 20px;
+      }
+
+      .contact-detail {
+        width: 100%;
+        justify-content: center;
+        overflow-wrap: anywhere;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *, *::before, *::after {
+        transition-duration: .01ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="container navbar">
+
+      <a href="#home" class="brand">
+        <span class="brand-icon">🧁</span>
+        For The Love Of Cupcakes
+      </a>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#flavours">Today's Flavours</a></li>
+        <li><a href="#custom">Custom Orders</a></li>
+        <li><a href="#events">Events</a></li>
+        <li><a href="#about">Our Family</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+      <div class="nav-right">
+        <a href="#custom" class="btn btn-pink">Order <span>♡</span></a>
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+      </div>
+
+    </div>
+  </header>
+
+
+  <main>
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+
+      <span class="hero-sparkle sparkle-one">✨</span>
+      <span class="hero-sparkle sparkle-two">♡</span>
+
+      <div class="container hero-grid">
+
+        <div class="hero-content">
+
+          <div class="hero-tag">🧁 A LITTLE SWEETNESS IN ESCANABA, MI</div>
+
+          <h1>
+            For The<br>
+            Love Of<br>
+            <span>Cupcakes!</span>
+          </h1>
+
+          <p class="hero-description">
+            Life is sweeter with a cupcake in hand! Come discover
+            something delicious, made with love and a little sprinkle
+            of magic. There's a NEW cupcake menu every day, so there's
+            always something wonderful waiting for you!
+          </p>
+
+          <div class="hero-buttons">
+            <a href="#flavours" class="btn btn-pink">Explore Today's Flavours 🧁</a>
+            <a href="#custom" class="btn btn-outline">Custom Orders</a>
+          </div>
+
+          <div class="hero-rating">
+            <span class="stars">★★★★★</span>
+            <span>4.9 stars from 420 reviews</span>
+          </div>
+
+        </div>
+
+        <div class="hero-image">
+          <!-- UNSPLASH PLACEHOLDER: illustrative cupcake photograph, not actual shop photography -->
+          <img
+            src="https://images.unsplash.com/photo-1576618148400-f54bed99fcfd?auto=format&fit=crop&w=1000&q=85"
+            alt="Illustrative photograph of beautifully decorated cupcakes">
+
+          <div class="floating-note">
+            <strong>Made with love ♡</strong>
+            <span>Sprinkles make everything better!</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- DAILY FLAVOURS -->
+    <section class="flavours" id="flavours">
+      <div class="container">
+
+        <div class="text-center">
+          <span class="section-label">A fresh little surprise every day</span>
+          <h2 class="section-heading">Today's <span class="script">Flavours!</span></h2>
+          <p class="section-intro">
+            Every day brings a NEW cupcake menu! From deliciously
+            chocolatey treats to fruity little favourites, there's
+            always a new reason to stop by.
+          </p>
+        </div>
+
+        <div class="flavour-banner">
+          <span>🎉</span>
+          NEW MENU EVERY DAY
+          <span>🧁</span>
+          <span>Rotating flavours • Sweet surprises • Fresh inspiration</span>
+        </div>
+
+        <div class="flavour-grid">
+
+          <article class="flavour-card">
+            <!-- UNSPLASH PLACEHOLDER: illustrative cupcake photo -->
+            <img
+              src="https://images.unsplash.com/photo-1486427944299-d1955d23e34d?auto=format&fit=crop&w=600&q=80"
+              alt="Illustrative cupcake photograph">
+
+            <div class="flavour-info">
+              <h3>Ghostberry 👻</h3>
+              <p>A fun, spooky-inspired fruity flavour for a little sweet adventure.</p>
+              <span class="flavour-tag">REAL MENU FLAVOUR</span>
+            </div>
+          </article>
+
+          <article class="flavour-card">
+            <!-- UNSPLASH PLACEHOLDER: illustrative chocolate cupcake photo -->
+            <img
+              src="https://images.unsplash.com/photo-1603532648955-039310d9ed75?auto=format&fit=crop&w=600&q=80"
+              alt="Illustrative chocolate cupcake photograph">
+
+            <div class="flavour-info">
+              <h3>Death By Chocolate 🍫</h3>
+              <p>A chocolate lover's dream, perfect for those serious sweet cravings.</p>
+              <span class="flavour-tag">REAL MENU FLAVOUR</span>
+            </div>
+          </article>
+
+          <article class="flavour-card">
+            <!-- UNSPLASH PLACEHOLDER: illustrative vanilla cupcake photo -->
+            <img
+              src="https://images.unsplash.com/photo-1614707267537-b85aaf00c4b7?auto=format&fit=crop&w=600&q=80"
+              alt="Illustrative vanilla cupcake photograph">
+
+            <div class="flavour-info">
+              <h3>Strawberry Dream 🍓</h3>
+              <p>A pretty pink, berry-inspired treat for a little everyday happiness.</p>
+              <span class="flavour-tag">EXAMPLE FLAVOUR</span>
+            </div>
+          </article>
+
+          <article class="flavour-card">
+            <!-- UNSPLASH PLACEHOLDER: illustrative frosted cupcake photo -->
+            <img
+              src="https://images.unsplash.com/photo-1599785209707-a456fc1337bb?auto=format&fit=crop&w=600&q=80"
+              alt="Illustrative frosted cupcake photograph">
+
+            <div class="flavour-info">
+              <h3>Vanilla Sprinkle ✨</h3>
+              <p>A classic vanilla-inspired cupcake with a playful sprinkle twist.</p>
+              <span class="flavour-tag">EXAMPLE FLAVOUR</span>
+            </div>
+          </article>
+
+        </div>
+
+        <div class="menu-note">
+          💗 <strong>A little heads-up:</strong> These are menu highlights
+          and generic example flavours, not a confirmed live daily menu.
+          Flavours rotate! Contact the shop to find out what's available today.
+        </div>
+
+        <p class="photo-disclaimer">
+          Photo note: All cupcake photographs on this page are illustrative
+          Unsplash placeholders, not the shop's real photos.
+        </p>
+
+      </div>
+    </section>
+
+
+    <!-- CUSTOM ORDERS -->
+    <section class="custom-orders" id="custom">
+      <div class="container custom-grid">
+
+        <div class="custom-image">
+          <!-- UNSPLASH PLACEHOLDER: illustrative celebration cupcake photograph -->
+          <img
+            src="https://images.unsplash.com/photo-1550617931-e17a7b70dce2?auto=format&fit=crop&w=1000&q=85"
+            alt="Illustrative photograph of decorated celebration cupcakes">
+
+          <div class="custom-image-note">
+            Your celebration, extra sweet! 🎀
+          </div>
+        </div>
+
+        <div class="custom-copy">
+
+          <span class="section-label">Made for your special moments</span>
+
+          <h2>
+            Let's Make Something <span class="script">Sweet!</span>
+          </h2>
+
+          <p>
+            Got a celebration coming up? Whether you're planning a
+            birthday bash, saying "I do", or throwing a party,
+            cupcakes make every moment a little more special.
+          </p>
+
+          <p>
+            Tell us what you're dreaming of and send us an order
+            request. We'd love to hear about your sweet celebration!
+          </p>
+
+          <ul class="occasion-list">
+            <li><span>🎂</span> Birthday Cupcakes</li>
+            <li><span>💍</span> Wedding Cupcakes</li>
+            <li><span>🎉</span> Party Cupcakes</li>
+            <li><span>💗</span> Custom Celebrations</li>
+          </ul>
+
+          <div class="order-form">
+
+            <h3>Let's Get Baking! 🧁</h3>
+            <p class="form-subtitle">
+              Fill out the details below and send your request directly through WhatsApp.
+            </p>
+
+            <form id="orderForm">
+
+              <div class="form-group">
+                <label for="customerName">Your Name *</label>
+                <input
+                  type="text"
+                  id="customerName"
+                  name="name"
+                  placeholder="What should we call you?"
+                  required>
+              </div>
+
+              <div class="form-row">
+
+                <div class="form-group">
+                  <label for="customerPhone">Phone Number *</label>
+                  <input
+                    type="tel"
+                    id="customerPhone"
+                    name="phone"
+                    placeholder="Your phone number"
+                    required>
+                </div>
+
+                <div class="form-group">
+                  <label for="occasion">Occasion *</label>
+                  <select id="occasion" name="occasion" required>
+                    <option value="">Choose one</option>
+                    <option>Birthday</option>
+                    <option>Wedding</option>
+                    <option>Baby Shower</option>
+                    <option>Graduation</option>
+                    <option>Anniversary</option>
+                    <option>Party</option>
+                    <option>Other</option>
+                  </select>
+                </div>
+
+              </div>
+
+              <div class="form-group">
+                <label for="neededDate">Date Needed *</label>
+                <input
+                  type="date"
+                  id="neededDate"
+                  name="date"
+                  required>
+              </div>
+
+              <div class="form-group">
+                <label for="orderDetails">Tell Us About Your Sweet Ideas *</label>
+                <textarea
+                  id="orderDetails"
+                  name="details"
+                  placeholder="Number of cupcakes, colours, flavours, designs, theme and any other special requests..."
+                  required></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-pink form-submit">
+                Send Order Request via WhatsApp 💬
+              </button>
+
+              <p class="privacy-note">
+                This opens WhatsApp with your request prefilled.
+                You'll review and send the message yourself.
+              </p>
+
+            </form>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- EVENTS AND COMMUNITY -->
+    <section class="events" id="events">
+      <div class="container">
+
+        <div class="text-center">
+          <span class="section-label">More than just cupcakes</span>
+          <h2 class="section-heading">
+            Sweet Treats & <span class="script">Sweet Memories!</span>
+          </h2>
+          <p class="section-intro">
+            We love bringing a little extra fun into our community.
+            From local art to surprise prizes, there's always
+            something sweet happening!
+          </p>
+        </div>
+
+        <div class="events-grid">
+
+          <article class="event-card">
+
+            <!-- UNSPLASH PLACEHOLDER: illustrative art and creative community photo -->
+            <img
+              src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=900&q=85"
+              alt="Illustrative photograph of art supplies and creative artwork">
+
+            <div class="event-content">
+              <span class="event-label">Local art & community</span>
+              <h3>Celebrating Local Creativity 🎨</h3>
+
+              <p>
+                For The Love Of Cupcakes hosted local artist
+                <strong>Alida Letts</strong> during the Escanaba ArtWalk!
+                We love celebrating the creativity and talent right here
+                in our community.
+              </p>
+            </div>
+
+          </article>
+
+          <article class="event-card">
+
+            <!-- UNSPLASH PLACEHOLDER: illustrative colourful celebration photo -->
+            <img
+              src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=900&q=85"
+              alt="Illustrative photograph of colourful party decorations">
+
+            <div class="event-content">
+              <span class="event-label">Special nights & surprises</span>
+              <h3>Spin The Prize Wheel! 🎡</h3>
+
+              <p>
+                Some nights come with an extra sprinkle of excitement!
+                Customers can spin our in-store prize wheel on special
+                nights. Who knows what sweet surprise might be waiting
+                for you?
+              </p>
+            </div>
+
+          </article>
+
+        </div>
+
+        <div class="community-strip">
+          <h3>Small Town, Big Sweetness! 💗</h3>
+          <p>
+            We believe local businesses, artists, families and neighbours
+            make a community special. Thank you for sharing your celebrations
+            and sweet moments with us!
+          </p>
+        </div>
+
+        <p class="photo-disclaimer">
+          Event photographs are illustrative placeholders, not actual event photographs.
+        </p>
+
+      </div>
+    </section>
+
+
+    <!-- ABOUT THE FAMILY -->
+    <section class="about" id="about">
+      <div class="container about-grid">
+
+        <div class="about-image">
+          <!-- UNSPLASH PLACEHOLDER: illustrative family baking photograph -->
+          <img
+            src="https://images.unsplash.com/photo-1556911220-bff31c812dba?auto=format&fit=crop&w=1000&q=85"
+            alt="Illustrative photograph of a warm home baking environment">
+        </div>
+
+        <div class="about-copy">
+
+          <span class="section-label">A little love goes a long way</span>
+
+          <h2>
+            Family Run, <span class="script">Sweetness Filled!</span>
+          </h2>
+
+          <p>
+            For The Love Of Cupcakes is a family-run cupcake and
+            dessert shop in Escanaba, Michigan.
+          </p>
+
+          <p>
+            We're all about making life a little sweeter, celebrating
+            life's special moments and sharing the joy of delicious
+            desserts with our community.
+          </p>
+
+          <p>
+            Whether you're popping in for a little afternoon treat,
+            finding your new favourite daily flavour, or planning
+            something special, we're happy to be part of your sweet story.
+          </p>
+
+          <div class="family-values">
+
+            <div class="value-item">
+              <span>👨‍👩‍👧‍👦</span>
+              Family Run
+            </div>
+
+            <div class="value-item">
+              <span>🧁</span>
+              Fresh Daily Menu
+            </div>
+
+            <div class="value-item">
+              <span>💗</span>
+              Made for Celebrations
+            </div>
+
+            <div class="value-item">
+              <span>🏡</span>
+              Escanaba, Michigan
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- CONTACT -->
+    <section class="contact" id="contact">
+      <div class="container">
+
+        <div class="contact-box">
+
+          <span class="section-label">Come say hello!</span>
+
+          <h2>
+            Let's Get <span class="script">In Touch!</span>
+          </h2>
+
+          <p>
+            Craving cupcakes? Have a question about today's flavours?
+            Planning something special? We'd love to hear from you!
+          </p>
+
+          <p style="font-weight:800;color:var(--pink-dark);margin-bottom:25px;">
+            "Call, stop in or email us to get a spot"
+          </p>
+
+          <div class="contact-details">
+
+            <a class="contact-detail" href="tel:+19063993004">
+              <span>📞</span>
+              906-399-3004
+            </a>
+
+            <a class="contact-detail" href="mailto:cscg906@gmail.com">
+              <span>✉️</span>
+              cscg906@gmail.com
+            </a>
+
+          </div>
+
+          <div class="contact-buttons">
+
+            <a href="tel:+19063993004" class="btn btn-pink">
+              Call The Shop 📞
+            </a>
+
+            <a href="mailto:cscg906@gmail.com" class="btn btn-outline">
+              Send An Email ✉️
+            </a>
+
+            <a
+              href="https://wa.me/1234567890?text=Hi%21%20I%27d%20love%20to%20know%20more%20about%20your%20cupcakes."
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn btn-mint">
+              WhatsApp Us 💬
+            </a>
+
+          </div>
+
+          <p class="opening-note">
+            Opening hours: to be confirmed
+          </p>
+
+          <p class="photo-disclaimer">
+            Located in Escanaba, Michigan, USA. Contact the shop for visit details.
+          </p>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+  <footer>
+
+    <div class="container">
+
+      <div class="footer-main">
+
+        <div>
+          <div class="footer-brand">🧁 For The Love Of Cupcakes</div>
+          <p class="footer-description">
+            A family-run cupcake and dessert shop in Escanaba, Michigan.
+            Fresh daily flavours, sweet celebrations and lots of love!
+          </p>
+        </div>
+
+        <div class="footer-links">
+          <a href="#home">Home</a>
+          <a href="#flavours">Flavours</a>
+          <a href="#custom">Custom Orders</a>
+          <a href="#events">Events</a>
+          <a href="#about">Our Family</a>
+          <a href="#contact">Contact</a>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+
+        <p>
+          © <span id="year"></span> For The Love Of Cupcakes.
+          All rights reserved.
+        </p>
+
+        <p>
+          Made with <span class="footer-heart">♥</span> and a whole lot of sprinkles.
+        </p>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+
+  <!-- JAVASCRIPT -->
+  <script>
+
+    // Mobile navigation
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+
+    menuToggle.addEventListener('click', function () {
+      const isOpen = navLinks.classList.toggle('active');
+      menuToggle.setAttribute('aria-expanded', String(isOpen));
+      menuToggle.textContent = isOpen ? '✕' : '☰';
+    });
+
+    // Close navigation after selecting a link
+    document.querySelectorAll('.nav-links a').forEach(function (link) {
+      link.addEventListener('click', function () {
+        navLinks.classList.remove('active');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        menuToggle.textContent = '☰';
+      });
+    });
+
+    // Automatically update copyright year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Prevent selecting a date in the past
+    const dateInput = document.getElementById('neededDate');
+    const today = new Date();
+    const localToday = [
+      today.getFullYear(),
+      String(today.getMonth() + 1).padStart(2, '0'),
+      String(today.getDate()).padStart(2, '0')
+    ].join('-');
+
+    dateInput.min = localToday;
+
+    // WhatsApp custom order form
+    document.getElementById('orderForm').addEventListener('submit', function (event) {
+
+      event.preventDefault();
+
+      const name = document.getElementById('customerName').value.trim();
+      const phone = document.getElementById('customerPhone').value.trim();
+      const occasion = document.getElementById('occasion').value;
+      const date = document.getElementById('neededDate').value;
+      const details = document.getElementById('orderDetails').value.trim();
+
+      if (!name || !phone || !occasion || !date || !details) {
+        alert('Please fill in all the required fields before sending your request. 💗');
+        return;
+      }
+
+      const message =
+`🧁 CUSTOM CUPCAKE ORDER REQUEST
+For The Love Of Cupcakes
+
+Hello! I'd love to enquire about a custom order.
+
+👤 Name: ${name}
+📞 Phone: ${phone}
+🎉 Occasion: ${occasion}
+📅 Date Needed: ${date}
+
+💗 Order Details:
+${details}
+
+Please let me know about availability and the next steps. Thank you!`;
+
+      // PLACEHOLDER WhatsApp number: replace with the shop's real
+      // international-format WhatsApp number before publishing.
+      const whatsappNumber = '1234567890';
+
+      const whatsappURL =
+        'https://wa.me/' + whatsappNumber +
+        '?text=' + encodeURIComponent(message);
+
+      window.open(whatsappURL, '_blank', 'noopener,noreferrer');
+
+    });
+
+  </script>
+
+</body>
+</html>
